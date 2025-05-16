@@ -25,28 +25,67 @@ Para instalar o `btop` no `Linux Ubuntu`, você pode usar o gerenciador de pacot
 
 2. Certifique-se de que seu sistema esteja limpo e atualizado.
 
-    2.1 Limpar o `cache` do gerenciador de pacotes `apt`. Especificamente, ele remove todos os arquivos de pacotes (`.deb`) baixados pelo `apt` e armazenados em `/var/cache/apt/archives/`. Digite o seguinte comando: `sudo apt clean` 
+    2.1 Limpar o `cache` do gerenciador de pacotes `apt`. Especificamente, ele remove todos os arquivos de pacotes (`.deb`) baixados pelo `apt` e armazenados em `/var/cache/apt/archives/`. Digite o seguinte comando:
     
-    2.2 Remover pacotes `.deb` antigos ou duplicados do cache local. É útil para liberar espaço, pois remove apenas os pacotes que não podem mais ser baixados (ou seja, versões antigas de pacotes que foram atualizados). Digite o seguinte comando: `sudo apt autoclean`
-
-    2.3 Remover pacotes que foram automaticamente instalados para satisfazer as dependências de outros pacotes e que não são mais necessários. Digite o seguinte comando: `sudo apt autoremove -y`
-
-    2.4 Buscar as atualizações disponíveis para os pacotes que estão instalados em seu sistema. Digite o seguinte comando e pressione `Enter`: `sudo apt update`
-
-    2.5 **Corrigir pacotes quebrados**: Isso atualizará a lista de pacotes disponíveis e tentará corrigir pacotes quebrados ou com dependências ausentes: `sudo apt --fix-broken install`
-
-    2.6 Limpar o `cache` do gerenciador de pacotes `apt`. Especificamente, ele remove todos os arquivos de pacotes (`.deb`) baixados pelo `apt` e armazenados em `/var/cache/apt/archives/`. Digite o seguinte comando: `sudo apt clean` 
+    ```bash
+    sudo apt clean
+    ``` 
     
-    2.7 Para ver a lista de pacotes a serem atualizados, digite o seguinte comando e pressione `Enter`:  `sudo apt list --upgradable`
+    2.2 Remover pacotes `.deb` antigos ou duplicados do cache local. É útil para liberar espaço, pois remove apenas os pacotes que não podem mais ser baixados (ou seja, versões antigas de pacotes que foram atualizados). Digite o seguinte comando:
+    
+    ```bash
+    sudo apt autoclean
+    ```
 
-    2.8 Realmente atualizar os pacotes instalados para as suas versões mais recentes, com base na última vez que você executou `sudo apt update`. Digite o seguinte comando e pressione `Enter`: `sudo apt full-upgrade -y`
-   
+    2.3 Remover pacotes que foram automaticamente instalados para satisfazer as dependências de outros pacotes e que não são mais necessários. Digite o seguinte comando:
+    
+    ```bash
+    sudo apt autoremove -y
+    ```
 
-3. **Instalar via Snap:** `sudo snap install btop`
+    2.4 Buscar as atualizações disponíveis para os pacotes que estão instalados em seu sistema. Digite o seguinte comando e pressione `Enter`: 
+    
+    ```bash
+    sudo apt update
+    ```
 
-4. Depois de instalado, você pode executá-lo simplesmente digitando btop no terminal: `btop`
+    2.5 **Corrigir pacotes quebrados**: Isso atualizará a lista de pacotes disponíveis e tentará corrigir pacotes quebrados ou com dependências ausentes:
+    
+    ```bash
+    sudo apt --fix-broken install
+    ```
 
-Isso abrirá a interface do btop, onde você pode monitorar e gerenciar os recursos do sistema.
+    2.6 Limpar o `cache` do gerenciador de pacotes `apt`. Especificamente, ele remove todos os arquivos de pacotes (`.deb`) baixados pelo `apt` e armazenados em `/var/cache/apt/archives/`. Digite o seguinte comando:
+    
+    ```bash
+    sudo apt clean
+    ``` 
+    
+    2.7 Para ver a lista de pacotes a serem atualizados, digite o seguinte comando e pressione `Enter`:  
+    
+    ```bash
+    sudo apt list --upgradable
+    ```
+
+    2.8 Realmente atualizar os pacotes instalados para as suas versões mais recentes, com base na última vez que você executou `sudo apt update`. Digite o seguinte comando e pressione `Enter`:
+    
+    ```bash
+    sudo apt full-upgrade -y
+    ```
+
+3. **Instalar via Snap:**
+
+    ```bash
+    sudo snap install btop
+    ```
+
+4. Depois de instalado, você pode executá-lo simplesmente digitando btop no `Terminal Emulator`:
+
+    ```bash
+    btop
+    ```
+
+Isso abrirá a interface do `btop`, onde você pode monitorar e gerenciar os recursos do sistema.
 
 
 ## 2. Código completo para configurar/instalar
@@ -57,8 +96,8 @@ Para instalar o `btop` no `Linux Ubuntu` sem precisar digitar linha por linha, v
 
 2. Digite o seguinte comando e pressione `Enter`:
 
-    ```
-    sudo apt clean                                                            
+    ```bash
+    sudo apt clean
     sudo apt autoclean
     sudo apt autoremove -y
     sudo apt update
@@ -69,6 +108,35 @@ Para instalar o `btop` no `Linux Ubuntu` sem precisar digitar linha por linha, v
     sudo snap install btop
     btop
     ```
+
+## 3. Passo a passo para ordenar por memória no `btop`
+
+1. Pressione a tecla **Left (`←`)** ou **Right (`→`)**  
+   
+   * Isso alterna entre as colunas de ordenação da lista de processos:
+
+    - `CPU%`
+
+    - `MEM%`
+
+    - `PID`
+
+    - etc.
+
+2. Continue pressionando até que a lista esteja ordenada por `MEM%`.
+
+3. Se necessário, pressione `R` para **inverter a ordem** (crescente ↔ decrescente).
+
+### Atalhos úteis (como mostrado na imagem)
+
+| Tecla     | Ação                                                      |
+|-----------|-----------------------------------------------------------|
+| `←` / `→`     | Muda a coluna de ordenação (ex: `CPU → MEM → PID`)         |
+| `R`         | Inverte a ordem de classificação                          |
+| `F2` ou `o`   | Abre o menu de opções                                     |
+
+Isso deve resolver exatamente o que você quer: ver os processos ordenados por **uso de memória**, em **ordem decrescente**.
+
 
 ## Referências
 
